@@ -30,4 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            handle:
+              wrong_length: "must be shorter than 30 charcters!"
+              blank: "cannot be blank!"
+              invalid: "can only contain numbers and letters!"
+              taken: 'is already in use!'
