@@ -1,0 +1,15 @@
+<nav class="global-navbar">
+  <ul class="global-nav left">
+    <li class="global-nav-item">
+      <%= link_to 'Odin Chess', root_path, class: 'global-nav-link home' %>
+    </li>
+  </ul>
+  <ul class="global-nav right">
+    <li class="global-nav-item">
+      <%= link_to 'Login', new_user_session_path, class: 'global-nav-link login' %>
+    </li>
+    <li class="global-nav-item">
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'global-nav-link signup' %>
+    </li>
+  </ul>
+</nav>

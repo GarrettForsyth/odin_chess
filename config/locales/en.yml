@@ -36,7 +36,8 @@ en:
         user:
           attributes:
             handle:
-              wrong_length: "must be shorter than 30 charcters!"
-              blank: "cannot be blank!"
-              invalid: "can only contain numbers and letters!"
-              taken: 'is already in use!'
+              wrong_length: "must be shorter than 30 charcters"
+              blank: "cannot be blank"
+              invalid: "can only contain numbers and letters"
+              taken: 'is already in use'
+

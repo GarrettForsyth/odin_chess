@@ -49,9 +49,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # Rspec and guard
-  gem 'rspec-rails'
-  gem 'guard-rspec'
   gem 'guard-livereload'
+  gem 'guard-rspec'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :development do

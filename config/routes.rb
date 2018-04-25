@@ -4,6 +4,7 @@ Rails.application.routes.draw do
                      path_names: { sign_in: 'login', sign_out: 'logout' }
 
   root to: 'static_pages#home'
+  get '/lobby', to: 'static_pages#lobby'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -14,3 +14,64 @@
 
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
+
+/* Site wide font */
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+/* some basic resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border;
+}
+
+
+/* colours */
+$olive: #7a6c5d;
+$light-red: #c17c74;
+$light-olive: #bcac9b;
+$dark: #2a3d45;
+$light: #f2ebe3;
+
+body {
+  background-color: $light; 
+}
+
+/* Styling for the global nav bar */
+.global-navbar {
+  display: flex;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: bold;
+
+  border-bottom: $dark solid 2px;
+}
+
+.global-nav {
+  display: inline-flex;
+  list-style: none;
+
+
+  .global-nav-item {
+    flex: 1;
+
+    .global-nav-link {
+      color: $dark;
+    }
+  }
+}
+
+.global-nav.left {
+  flex: 2;
+}
+
+.global-nav.right {
+  flex: 1;
+  text-align: center;
+}
+
+/* End Styling of global nav bar */
