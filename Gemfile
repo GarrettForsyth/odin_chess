@@ -42,6 +42,9 @@ gem 'bootstrap', '~> 4.1.0'
 # Needed for bootstrap
 gem 'jquery-rails'
 
+# CSS in emails
+gem 'premailer-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -53,6 +56,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'letter_opener'
 end
 
 group :development do
@@ -70,7 +74,6 @@ group :test do
   gem 'minitest-reporters'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'database_cleaner'
-  gem 'letter_opener'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
