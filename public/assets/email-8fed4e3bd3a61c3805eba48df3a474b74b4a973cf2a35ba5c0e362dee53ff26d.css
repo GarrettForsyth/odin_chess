@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+/* line 5, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/email.css.scss */
+h3 {
+  font-family: 'Cinzel', courier;
+}
+
+/* line 8, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/email.css.scss */
+#email-wrapper {
+  background: #bcac9b;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+/* line 13, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/email.css.scss */
+#email-wrapper #header {
+  background: #f2ebe3;
+  margin: 30px 30px 0px 30px;
+  padding: 5px 30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: 'Cinzel', serif;
+  color: #2a3d45;
+}
+/* line 23, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/email.css.scss */
+#email-wrapper #header .logo {
+  width: 30px;
+  height: auto;
+}
+/* line 28, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/email.css.scss */
+#email-wrapper #body {
+  background: white;
+  margin: 0px 30px;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  padding-bottom: 15px;
+  border: 1px solid #f2ebe3;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
