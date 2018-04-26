@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module OdinChess
   class Application < Rails::Application
+    # Add images in emails
+    config.action_mailer.asset_host = 'https://odin-chess.herokuapp.com'
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
