@@ -6,7 +6,16 @@
   </ul>
   <ul class="global-nav right">
     <li class="global-nav-item">
-      <%= link_to 'Login', new_user_session_path, class: 'global-nav-link login' %>
+      <% if user_signed_in? %>
+        <%= link_to 'Logout',
+          destroy_user_session_path,
+          class: 'global-nav-link login',
+          method: :delete %>
+      <% else %>
+        <%= link_to 'Login',
+          new_user_session_path,
+          class: 'global-nav-link login' %>
+      <% end %>
     </li>
     <li class="global-nav-item">
       <%= link_to 'Sign Up', new_user_registration_path, class: 'global-nav-link signup' %>

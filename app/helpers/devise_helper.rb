@@ -8,9 +8,6 @@ module DeviseHelper
       <button type="button" class="close" data-dismiss="alert">
         <span aria-hidden="true">&times;</span>
       </button>
-      <strong>
-       #{pluralize(resource.errors.count, "error")} must be fixed
-      </strong>
       #{messages}
     </div>
     HTML
