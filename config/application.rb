@@ -11,6 +11,10 @@ module OdinChess
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    # Add images in emails
+    config.action_controller.asset_host = 'https://odin-chess.herokuapp.com'
+    config.action_mailer.asset_host = 'https://odin-chess.herokuapp.com'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
