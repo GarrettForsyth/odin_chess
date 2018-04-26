@@ -3,7 +3,9 @@
     <table>
       <tbody>
         <tr>
-          <td width='40px'><%= image_tag('horse.svg') %></td>
+          <td><%= image_tag 'horse.svg', title: 'Knight', alt: 'Knight',
+            width: '40px', height: 'auto', display: 'inline-block' %>
+          </td>
           <td>
             <h3>Welcome <%= @resource.handle %>!</h3>
           </td> 
