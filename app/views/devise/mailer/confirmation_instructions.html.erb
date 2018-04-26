@@ -3,7 +3,7 @@
     <table>
       <tbody>
         <tr>
-          <td width='40px'><%= image_tag attachments['horse.svg'].url %></td>
+          <td width='40px'><%= image_tag(attachments.inline['horse.svg'].url) %></td>
           <td>
             <h3>Welcome <%= @resource.handle %>!</h3>
           </td> 

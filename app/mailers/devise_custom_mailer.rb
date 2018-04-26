@@ -6,7 +6,7 @@ class DeviseCustomMailer < Devise::Mailer
   add_template_helper ApplicationHelper
 
   def confirmation_instructions(record, token, opts={})
-    attachments.inline['horse.svg'] = File.read(Rails.root.join('public/images/horse.svg'))
+    attachments.inline["horse.svg"] = File.read("#{Rails.root}/app/assets/images/horse.svg")
     super
   end
 
