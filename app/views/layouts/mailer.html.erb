@@ -5,6 +5,21 @@
     <%= stylesheet_link_tag 'email.css' %>
   </head>
   <body>
-    <%= yield %>
+    <div id="email-wrapper">
+      <div id="header">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <%= yield :header %>
+              </td> 
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="body">
+         <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

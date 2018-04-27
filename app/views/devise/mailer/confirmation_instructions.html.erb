@@ -1,20 +1,6 @@
-<div id="email-wrapper">
-  <div id="header">
-    <table>
-      <tbody>
-        <tr>
-          <td><%= image_tag 'horse.svg', title: 'Knight', alt: 'Knight',
-            width: '40px', height: 'auto', display: 'inline-block' %>
-          </td>
-          <td>
-            <h3>Welcome <%= @resource.handle %>!</h3>
-          </td> 
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div id="body">
-    <p>You can confirm your account email through the link below:</p>
-    <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
-  </div>
-</div>
+<% content_for :header do %>
+<h3>Welcome <%= @resource.handle %>!</h3>
+<% end %>
+
+<p>You can confirm your account email through the link below:</p>
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
