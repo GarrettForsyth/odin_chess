@@ -1,0 +1,47 @@
+body {
+  font-family: 'Cinzel', 'courier'
+}
+
+.form-container {
+  margin-top: 50px;
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.spacer > td {
+  padding: 0.3rem;
+}
+
+.label {
+  text-align: right;
+  padding-right: 10px;
+  line-height: 0.2rem;
+}
+
+.field {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.button {
+  width: 82%;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.valid {
+  border: green solid 2px;
+}
+
+.invalid {
+  border: red solid 2px;
+}
+
+td {
+  width: 33%;
+}

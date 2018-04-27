@@ -9,9 +9,9 @@ class User < ApplicationRecord
          :validatable,
          :confirmable
 
-  VALID_HANDLE_REGEX = /\A[a-zA-Z0-9]+\z/ # Only letters letters and numbers
+  VALID_HANDLE_REGEX = /\A[a-zA-Z0-9\-_]+\z/ # Only letters letters and numbers
   validates :handle, presence: true,
-                     length: { maximum: 30 },
+                     length: { maximum: 20 },
                      format: { with: VALID_HANDLE_REGEX },
                      uniqueness: { case_sensitive: false }
 
