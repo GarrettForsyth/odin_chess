@@ -30,6 +30,7 @@ body {
 }
 
 .error {
+  width: 33%;
   padding-left: 10px;
   color: red;
   font-size: 0.8rem;
@@ -45,6 +46,10 @@ body {
 
 .left {
   text-align: left;
+}
+
+small {
+  font-size: 0.6rem;
 }
 
 
