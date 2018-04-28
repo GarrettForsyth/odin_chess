@@ -4,7 +4,7 @@ body {
 
 .form-container {
   margin-top: 50px;
-  width: 800px;
+  width: 600px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
@@ -26,10 +26,11 @@ body {
 }
 
 .button {
-  width: 82%;
+  padding: 2px;
 }
 
 .error {
+  padding-left: 10px;
   color: red;
   font-size: 0.8rem;
 }
@@ -42,6 +43,8 @@ body {
   border: red solid 2px;
 }
 
-td {
-  width: 33%;
+.left {
+  text-align: left;
 }
+
+

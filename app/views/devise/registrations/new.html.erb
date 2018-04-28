@@ -5,74 +5,66 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
     <table>
-      <tr>
-        <td class='label'>
-           <%= f.label :handle %>
-        </td>
-        <td class="field">
+      <% content_for :label, flush: true do %>
+        <%= f.label :handle %>
+      <% end %>
+      <% content_for :field, flush: true do %>
           <%= f.text_field :handle, autofocus: true, autocomplete: "text", id: "handle" %>
-        </td>
-        <td class='error' id="error-handle"></td>
-      </tr>
+      <% end %>
+      <% content_for :error, flush: true do %>
+         <td class='error' id="error-handle"></td> 
+      <% end %>
+      <%= render partial: 'form_field' %>
 
-      <tr class='spacer'>
-        <td></td>
-      </tr>
-
-      <tr>
-        <td class="label">
-           <%= f.label :email %>
-        </td>
-        <td class="field">
+      <% content_for :label, flush: true do %>
+        <%= f.label :email %>
+      <% end %>
+      <% content_for :field, flush: true do %>
            <%= f.email_field :email, autocomplete: "email", id: 'email' %>
-        </td>
+      <% end %>
+      <% content_for :error, flush: true do %>
         <td class='error' id="error-email"></td>
-      </tr>
+      <% end %>
+      <%= render partial: 'form_field' %>
 
-      <tr class='spacer'>
-        <td></td>
-      </tr>
-
-      <tr>
-        <td class="label">
+      <% content_for :label, flush: true do %>
           <%= f.label :password %>
           <% if @minimum_password_length %>
             <small><em> <br />(<%= @minimum_password_length %> characters minimum)</em></small>
           <% end %>
-        </td>
-        <td class="field">
+      <% end %>
+      <% content_for :field, flush: true do %>
           <%= f.password_field :password, autocomplete: "off", id: 'password'%>
-        </td>
+      <% end %>
+      <% content_for :error, flush: true do %>
         <td class= 'error' id="error-password"></td>
-      </tr>
+      <% end %>
+      <%= render partial: 'form_field' %>
 
-      <tr class='spacer'>
-        <td></td>
-      </tr>
-
-      <tr>
-        <td class="label">
+      <% content_for :label, flush: true do %>
           <%= f.label :confirmation %>
-        </td>
-        <td class="field">
-           <%= f.password_field :confirmation, autocomplete: "off", id: 'confirmation' %>
-        </td>
+      <% end %>
+      <% content_for :field, flush: true do %>
+          <%= f.password_field :confirmation, autocomplete: "off", id: 'confirmation' %>
+      <% end %>
+      <% content_for :error, flush: true do %>
         <td class='error' id="error-confirmation"></td>
-      </tr>
-
-      <tr class='spacer'>
-        <td></td>
-      </tr>
+      <% end %>
+      <%= render partial: 'form_field' %>
 
       <tr>
         <td></td>
-        <td class='actions field'>
+        <td class='actions left'>
           <%= f.submit "Sign up", class: 'button' %>
         </td>
       </tr>
 
+      <tr>
+        <td></td>
+        <td>
+          <%= render "devise/shared/links" %>
+        </td>
+      </tr>
     </table>
   <% end %>
-
-  <%= render "devise/shared/links" %>
-</div?
+</div>

@@ -1,25 +1,41 @@
-<h2>Change your password</h2>
+<%= stylesheet_link_tag 'user_form' %>
+<div class="form-container">
+  <h2>Change your password</h2>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% content_for :label, flush: true do %>
+      <%= f.label :password, "New password" %><br />
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+      <% end %>
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+    <% content_for :field, flush: true do %>
+      <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+    <% end %>
+    <%= render 'form_field' %>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <% content_for :label, flush: true do %>
+      <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <% end %>
+    <% content_for :field, flush: true do %>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <% end %>
+    <%= render 'form_field' %>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+    <tr>
+      <td></td>
+      <td class='actions left'>
+        <%= f.submit "Change my password", class: 'button' %>
+      </td>
+    </tr>
 
-<%= render "devise/shared/links" %>
+    <tr>
+      <td></td>
+      <td class='left'>
+         <%= render "devise/shared/links" %>
+      </td>
+    </tr>
+  <% end %>
+</div>
