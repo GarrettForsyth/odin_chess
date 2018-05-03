@@ -7,11 +7,18 @@ class SeeksController < ApplicationController
     if @seek.save
       # Seek should up broadcast right after creation
       ActionCable.server.broadcast 'seeks',
-                                   seek: render_seek(@seek)
+                                   add_seek: render_seek(@seek)
       head :ok
     else
       redirect_to 'lobby'
     end
+  end
+
+  def destroy
+    @seek = Seek.find params[:id]
+    ActionCable.server.broadcast 'seeks',
+                                 destroy_seek: @seek.id
+    @seek.destroy
   end
 
   private

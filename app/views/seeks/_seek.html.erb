@@ -1,5 +1,10 @@
-<tr class="seek">
-  <td class="seeker">
+<tr class="seek" id= <%= "seek_#{seek.id}" %>>
+  <td class="cancel">
+    <% if seek.user == current_user %>
+      <%= button_to '×', seek, method: :delete, remote: true %>
+    <% end %>
+  </td>
+  <td class="seeker" %>
     <%= seek.user.handle %>
   </td>
   <td class="time-control">
