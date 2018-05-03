@@ -45,7 +45,7 @@
           <%= f.label :confirmation %>
       <% end %>
       <% content_for :field, flush: true do %>
-          <%= f.password_field :confirmation, autocomplete: "off", id: 'confirmation' %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", id: 'confirmation' %>
       <% end %>
       <% content_for :error, flush: true do %>
         <td class='error' id="error-confirmation"></td>

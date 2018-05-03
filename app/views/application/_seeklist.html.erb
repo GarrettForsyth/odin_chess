@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'seeklist' %>
+<div class="main-container">
+  <div class="seeklist-container">
+    <h1>Current Seeks</h1>
+    <table id='seek-table'>
+      <tr>
+        <th>Sent by</th>
+        <th>Time Control</th>
+        <th></th>
+      </tr>
+
+      <% if @seeklist.seeks.any? %>
+        <div  id="seeks">
+          <%= render partial: 'seeks/seek', collection: @seeklist.seeks%>
+        </div>
+      <%else%>
+        <div id="seeks">
+        </div>
+      <%end%>
+    </table>
+  </div>
+
+  <div class="seek-form-container">
+    <%= render partial: 'seeks/seek_form', locals: {seek: @seek, seeklist: @seeklist}%>
+  </div>
+</div>

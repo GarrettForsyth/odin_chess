@@ -1,0 +1,58 @@
+/* line 1, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+body {
+  font-family: "Cinzel", "courier";
+}
+
+/* line 5, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.main-container {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* line 12, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seeklist-container {
+  border: #2a3d45 solid 1px;
+}
+/* line 14, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seeklist-container table {
+  width: 100%;
+}
+/* line 17, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seeklist-container tr {
+  width: 100%;
+  border-bottom: black solid 1px;
+}
+/* line 21, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seeklist-container td {
+  width: 33%;
+}
+
+/* line 26, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seek-form-container {
+  border: black solid 1px;
+}
+/* line 28, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seek-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+/* line 32, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seek-form-container form .time-control-field {
+  display: flex;
+  align-items: center;
+}
+/* line 35, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seek-form-container form .time-control-field input {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 70px;
+}
+/* line 43, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/seeklist.scss */
+.seek-form-container form .button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}

@@ -1,0 +1,10 @@
+<h3 class='form-title'>Your Seek</h3>
+<%= form_for seek, remote: true, authenticity_token: true do |f| %>
+  <div class="time-control-field">
+    <%= f.label :time_control %>
+    <%= f.number_field :timecontrol, class: "form-control", data: {timecontrol: "seek"} %>
+    MINS
+  </div>
+<%= f.hidden_field :seeklist_id, value: seeklist.id %>
+<%= f.submit "Seek", class: "button", data: {send: "seek"} %>
+<% end %>

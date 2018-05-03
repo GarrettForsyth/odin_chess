@@ -68,7 +68,7 @@ describe User, type: :model do
     mixed_case_email = 'fOoBar@ExaMpLe.COm'
     user.email = mixed_case_email
     user.save
-    expect(user.reload.email).to eq(mixed_case_email.downcase)
+    expect(user.email).to eq(mixed_case_email.downcase)
   end
 
   it 'invalid with a blank password' do

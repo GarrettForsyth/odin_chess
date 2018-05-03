@@ -15,7 +15,7 @@ describe 'layouts/_global_nav.html.erb' do
   end
 
   it 'contains links if user is signed in' do
-    user = FactoryBot.create(:user)
+    user = FactoryBot.create(:confirmed_user)
     sign_in user
 
     render

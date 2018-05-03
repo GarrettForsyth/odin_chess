@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+  resources :seeks
+  resources :seeklists
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
+
   devise_for :users, controllers: { sessions: 'users/sessions',
                                     registrations: 'users/registrations' },
                      path_names: { sign_in: 'login', sign_out: 'logout' }

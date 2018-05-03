@@ -26,7 +26,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -72,11 +72,16 @@ group :development do
 end
 
 group :test do
+  gem 'action-cable-testing'
+  gem 'capybara-screenshot'
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.0'
+  gem 'faker'
   gem 'guard'
   gem 'guard-minitest'
+  gem 'launchy'
   gem 'minitest-reporters'
+  gem 'phantomjs'
   gem 'poltergeist'
 end
 

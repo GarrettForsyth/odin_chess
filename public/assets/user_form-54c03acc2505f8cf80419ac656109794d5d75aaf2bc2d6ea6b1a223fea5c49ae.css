@@ -1,0 +1,64 @@
+/* line 1, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+body {
+  font-family: "Cinzel", "courier";
+}
+
+/* line 5, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.form-container {
+  margin-top: 50px;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+/* line 13, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.spacer > td {
+  padding: 0.3rem;
+}
+
+/* line 17, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.label {
+  text-align: right;
+  padding-right: 10px;
+  line-height: 0.2rem;
+}
+
+/* line 23, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.field {
+  margin-left: 10px;
+  text-align: left;
+}
+
+/* line 28, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.button {
+  padding: 2px;
+}
+
+/* line 32, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.error {
+  width: 33%;
+  padding-left: 10px;
+  color: red;
+  font-size: 0.8rem;
+}
+
+/* line 39, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.valid {
+  border: green solid 2px;
+}
+
+/* line 43, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.invalid {
+  border: red solid 2px;
+}
+
+/* line 47, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+.left {
+  text-align: left;
+}
+
+/* line 51, /home/garrett/the_odin_project/odin_chess/app/assets/stylesheets/user_form.scss */
+small {
+  font-size: 0.6rem;
+}
