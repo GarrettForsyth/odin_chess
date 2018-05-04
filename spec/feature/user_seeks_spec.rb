@@ -45,4 +45,7 @@ feature 'UserSeeks', type: :feature, js: true, action_cable: :async do
     sleep(5)
     expect(page.all(:xpath, './/tr[@id="seek_1"]', wait: 10).length).to eq(0)
   end
+
+  scenario 'a user accepts a seek' do
+  end
 end

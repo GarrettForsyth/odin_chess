@@ -14,7 +14,8 @@
 
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
-
+@import 'chessboard-0.3.0.min.css';
+@import 'games';
 /* Site wide font */
 @import url('https://fonts.googleapis.com/css?family=Cinzel');
 

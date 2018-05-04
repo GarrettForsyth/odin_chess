@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//
+//= require chessboard-0.3.0.min
+//= require chess.min
 //= require_tree ./channels
 //= require paloma
 //= require jquery3

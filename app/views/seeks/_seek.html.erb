@@ -10,4 +10,9 @@
   <td class="time-control">
     <%= (seek.timecontrol)/60 %>
   </td>
+  <td>
+    <% unless seek.user == current_user %>
+      <%= button_to 'Accept', accept_seek_path(seek), method: :delete, remote: true %>
+    <% end %>
+  </td>
 </tr>

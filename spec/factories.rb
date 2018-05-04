@@ -22,4 +22,10 @@ FactoryBot.define do
   factory :invalid_seek, parent: :seek do
     timecontrol '-1'
   end
+
+  factory :game do
+    association :white_user, factory: :confirmed_user
+    association :black_user, factory: :confirmed_user
+    timecontrol Random.rand(1..120)
+  end
 end

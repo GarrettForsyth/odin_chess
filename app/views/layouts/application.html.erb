@@ -12,7 +12,9 @@
   <body>
     <%= render 'layouts/global_nav' %>
     <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div id="main-container">
+      <%= yield %>
+    </div>
     <%= insert_paloma_hook %>
   </body>
 </html>

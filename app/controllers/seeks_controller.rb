@@ -7,7 +7,8 @@ class SeeksController < ApplicationController
     if @seek.save
       # Seek should up broadcast right after creation
       ActionCable.server.broadcast 'seeks',
-                                   add_seek: render_seek(@seek)
+                                   action: 'add',
+                                   seek: render_seek(@seek)
       head :ok
     else
       redirect_to 'lobby'
@@ -17,8 +18,24 @@ class SeeksController < ApplicationController
   def destroy
     @seek = Seek.find params[:id]
     ActionCable.server.broadcast 'seeks',
-                                 destroy_seek: @seek.id
+                                 action: 'destroy',
+                                 seek_id: @seek.id
     @seek.destroy
+  end
+
+  def accept
+    @seek = Seek.find params[:id]
+    white, black = [@seek.user, current_user].shuffle
+    game_params = { white_user: white,  black_user:black, timecontrol: @seek.timecontrol }
+    if @game = Game.create(game_params)
+      Game.broadcast_start(white, black, game_url(@game))
+      ActionCable.server.broadcast 'seeks',
+                                   action: 'destroy',
+                                   seek_id: @seek.id
+      @seek.destroy
+    else
+      flash[:error] = 'Game could not be created.'
+    end
   end
 
   private

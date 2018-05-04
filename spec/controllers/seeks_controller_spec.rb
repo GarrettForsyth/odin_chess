@@ -50,4 +50,45 @@ RSpec.describe SeeksController, type: :controller do
         .to have_broadcasted_to('seeks')
     end
   end
+
+  describe 'DELETE #accept' do
+    before :each do
+      @seek = FactoryBot.create(:seek, user: @user)
+      @accepting_user = FactoryBot.create(:confirmed_user)
+      sign_in @accepting_user
+    end
+
+    it 'deletes the seek' do
+      expect { delete :accept, params: { id: @seek } }
+        .to change(Seek, :count).by(-1)
+    end
+
+    it 'broadcast to seeks channel to delete seek from list' do
+      expect { delete(:accept, params: { id: @seek }) }
+        .to have_broadcasted_to('seeks')
+    end
+
+    it 'broadcast to the seeking player' do
+      expect { delete(:accept, params: { id: @seek }) }
+        .to have_broadcasted_to("player_#{@seek.user.handle}")
+    end
+
+    it 'broadcasting to the accepting palyer' do
+      expect { delete(:accept, params: { id: @seek }) }
+        .to have_broadcasted_to("player_#{@accepting_user.handle}")
+    end
+
+    it 'creates a new game' do
+      expect { delete(:accept, params: { id: @seek }) }
+        .to change(Game, :count).by(1)
+    end
+
+    it 'redirects the accepting user to the game' do
+      expect(delete(:accept, params: { id: @seek }))
+        .to redirect_to(game_path(Game.last))
+    end
+
+    xit 'redirects seeking user to the game' do
+    end
+  end
 end
