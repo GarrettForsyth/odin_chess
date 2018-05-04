@@ -1,3 +1,4 @@
 require 'redis'
 
-$redis = Redis::Namespace.new("odin_chess", :redis => Redis.new)
+uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://localhost:6379/" )
+$redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
