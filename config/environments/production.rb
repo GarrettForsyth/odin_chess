@@ -1,6 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  confg.redis_host = 'https://odin-chess.heroku.app.com'
+  config.redis_host = 'https://odin-chess.herokuapp.com'
+  config.web_socket_server_url = "wss://odin-chess.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://odin-chess.herokuapp.com', 'http://odin-chess.herokuapp.com']
 
   # Code is not reloaded between requests.
   config.cache_classes = true

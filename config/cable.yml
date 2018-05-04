@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:5f043575f5c00e0473bf16e5cc308b33@toadfish-staging.redistogo.com:9018/
   channel_prefix: odin_chess_production
