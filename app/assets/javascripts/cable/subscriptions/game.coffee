@@ -18,11 +18,12 @@ App.game = App.cable.subscriptions.create "GameChannel",
       when 'make_move'
         [source, target] = data.msg.color.split('-')
 
-        App.board.move(data.msg.color)
         App.chess.move
           from: source
           to: target
           promotion: 'q'
+        updateStatus()
+        App.board.position(App.chess.fen())
 
 render_board = () ->
   board = document.createElement('div')
@@ -30,13 +31,15 @@ render_board = () ->
   board.setAttribute('style', 'width:400px')
   $('#main-container').append(board)
 
+
+statusEl = $('#status')
+fenEl =  $('#fen')
+pgnEl =  $('#pgn')
+
 setup_board = () ->
   App.chess = new Chess()
 
   cfg =
-    statusEl:  $('#status'),
-    fenEl:  $('#fen'),
-    pgnEl:  $('#pgn'),
     position: 'start',
     draggable: true,
 
@@ -59,31 +62,32 @@ setup_board = () ->
         return "snapback"
       else
         App.game.perform("make_move", move)
-      cfg.updateStatus()
+      updateStatus()
 
-    updateStatus: () ->
-      status = ''
-      moveColor = 'White'
-
-      if (App.chess.turn() == 'b')
-        moveColor = 'Black'
-
-      if (App.chess.in_checkmate() == true)
-        status = 'Game over, ' + moveColor + 'is in checkmate.'
-      else if (App.chess.in_draw() == true)
-        status = 'Game over, drawn position.'
-      else
-        status = moveColor + ' to move'
-
-        if (App.chess.in_check() == true)
-          status += ', ' + moveColor + ' is in check'
-
-      # cfg.statusEl.html(status)
-      cfg.fenEl.html(App.chess.fen())
-      cfg.pgnEl.html(App.chess.pgn())
 
     # update for castling and en passant, pawn promotion
     onSnapEnd: () ->
       App.board.position(App.chess.fen())
 
   App.board = ChessBoard("chessboard", cfg)
+
+updateStatus = () ->
+  status = ''
+  moveColor = 'White'
+
+  if (App.chess.turn() == 'b')
+    moveColor = 'Black'
+
+  if (App.chess.in_checkmate() == true)
+    status = 'Game over, ' + moveColor + 'is in checkmate.'
+  else if (App.chess.in_draw() == true)
+    status = 'Game over, drawn position.'
+  else
+    status = moveColor + ' to move'
+
+  if (App.chess.in_check() == true)
+    status += ', ' + moveColor + ' is in check'
+
+  # statusEl.html(status)
+  fenEl.html(App.chess.fen())
+  pgnEl.html(App.chess.pgn())
