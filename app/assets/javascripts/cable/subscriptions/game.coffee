@@ -8,19 +8,21 @@ App.game = App.cable.subscriptions.create "GameChannel",
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
     ($('#main-container')).empty()
-    render_board()
-    setup_board()
+    console.log('here!!')
     switch data.action
       when 'game_start'
+        render_board()
+        setup_board()
         App.board.position('start')
         App.board.orientation(data.msg.color)
-
+        return
       when 'make_move'
         App.chess.move
           from: data.msg.from
           to: data.msg.to
           promotion: 'q'
         App.board.position(App.chess.fen())
+        return
 
 render_board = () ->
   board = document.createElement('div')
