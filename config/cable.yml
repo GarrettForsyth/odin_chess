@@ -6,4 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:5f043575f5c00e0473bf16e5cc308b33@toadfish-staging.redistogo.com:9018/
+  url: redis://redistogo:e4b6d9bc15175f945b692417ac5cbe96@soldierfish.redistogo.com:11885/
