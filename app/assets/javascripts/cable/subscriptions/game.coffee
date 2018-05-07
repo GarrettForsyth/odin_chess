@@ -7,10 +7,10 @@ App.game = App.cable.subscriptions.create "GameChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    ($('#main-container')).empty()
     console.log('here!!')
     switch data.action
       when 'game_start'
+        ($('#main-container')).empty()
         render_board()
         setup_board()
         App.board.position('start')
