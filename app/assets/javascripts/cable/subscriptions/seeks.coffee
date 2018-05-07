@@ -6,5 +6,4 @@ App.seeks = App.cable.subscriptions.create 'SeeksChannel',
           $('#seek-table').append(data.seek)
         
         when 'destroy'
-          console.log('test destroy')
           $("#seek_#{data.seek_id}").remove()

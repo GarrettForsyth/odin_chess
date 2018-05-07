@@ -16,13 +16,10 @@ App.game = App.cable.subscriptions.create "GameChannel",
         App.board.orientation(data.msg.color)
 
       when 'make_move'
-        [source, target] = data.msg.color.split('-')
-
         App.chess.move
-          from: source
-          to: target
+          from: data.msg.from
+          to: data.msg.to
           promotion: 'q'
-        updateStatus()
         App.board.position(App.chess.fen())
 
 render_board = () ->
@@ -30,11 +27,6 @@ render_board = () ->
   board.setAttribute('id', 'chessboard')
   board.setAttribute('style', 'width:400px')
   $('#main-container').append(board)
-
-
-statusEl = $('#status')
-fenEl =  $('#fen')
-pgnEl =  $('#pgn')
 
 setup_board = () ->
   App.chess = new Chess()
@@ -62,32 +54,9 @@ setup_board = () ->
         return "snapback"
       else
         App.game.perform("make_move", move)
-      updateStatus()
-
 
     # update for castling and en passant, pawn promotion
     onSnapEnd: () ->
       App.board.position(App.chess.fen())
 
   App.board = ChessBoard("chessboard", cfg)
-
-updateStatus = () ->
-  status = ''
-  moveColor = 'White'
-
-  if (App.chess.turn() == 'b')
-    moveColor = 'Black'
-
-  if (App.chess.in_checkmate() == true)
-    status = 'Game over, ' + moveColor + 'is in checkmate.'
-  else if (App.chess.in_draw() == true)
-    status = 'Game over, drawn position.'
-  else
-    status = moveColor + ' to move'
-
-  if (App.chess.in_check() == true)
-    status += ', ' + moveColor + ' is in check'
-
-  # statusEl.html(status)
-  fenEl.html(App.chess.fen())
-  pgnEl.html(App.chess.pgn())
