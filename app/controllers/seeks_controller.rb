@@ -11,7 +11,7 @@ class SeeksController < ApplicationController
                                    seek: render_seek(@seek)
       head :ok
     else
-      redirect_to 'lobby'
+      redirect_to lobby_url
     end
   end
 

@@ -3,7 +3,6 @@ App.seeks = App.cable.subscriptions.create 'SeeksChannel',
     if data.action && !data.action.blank?
       switch data.action
         when 'add'
-          console.log('test add')
           $('#seek-table').append(data.seek)
         
         when 'destroy'

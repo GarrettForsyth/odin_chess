@@ -82,13 +82,5 @@ RSpec.describe SeeksController, type: :controller do
       expect { delete(:accept, params: { id: @seek }) }
         .to change(Game, :count).by(1)
     end
-
-    it 'redirects the accepting user to the game' do
-      expect(delete(:accept, params: { id: @seek }))
-        .to redirect_to(game_path(Game.last))
-    end
-
-    xit 'redirects seeking user to the game' do
-    end
   end
 end
