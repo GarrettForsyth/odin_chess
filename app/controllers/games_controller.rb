@@ -7,6 +7,8 @@ class GamesController < ApplicationController
                      timecontrol: params[:game][:timecontrol])
     if @game.save
       Game.broadcast_start(@white, @black, game_url(@game.id))
+      @white.seeks.destroy_all
+      @black.seeks.destroy_all
     else
       flash[:error] = 'Game could not be created.'
     end

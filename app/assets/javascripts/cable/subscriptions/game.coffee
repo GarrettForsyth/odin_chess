@@ -42,7 +42,9 @@ setup_board = () ->
     onDragStart: (source, piece, position, orientation) ->
       if (App.chess.game_over() == true ||
       (App.chess.turn() == 'w' && piece.search(/^b/) != -1) ||
-      (App.chess.turn() == 'b' && piece.search(/^w/) != -1))
+      (App.chess.turn() == 'b' && piece.search(/^w/) != -1) ||
+      (App.chess.turn() == 'b' && orientation == 'white') ||
+      (App.chess.turn() == 'w' && orientation == 'black'))
         return false
 
     onDrop: (source, target) ->
