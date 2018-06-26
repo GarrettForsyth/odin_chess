@@ -1,5 +1,13 @@
 # Odin Chess
 
-This app aspires to clone the core features of an online chess website.
+[live](https://odin-chess.herokuapp.com)
 
-It follows from an [assignment in the Odin Project](https://www.theodinproject.com/courses/javascript/lessons/final-project-116ff273-1e55-4055-bd7f-146c17d0ec9c?ref=lnav).
+A simple live chess server.
+
+Users sign up and create seeks. If another user accepts a seek, a game is setup between the users.
+
+This app uses [chessboard.js](http://chessboardjs.com/) for the board, and [chess.js]_(https://github.com/jhlywa/chess.js/blob/master/README.md) to implement the chess logic.
+
+Rails active cable sends live updates to the users when a move on the board is made, so the game is played in real time.
+
+
